@@ -8,7 +8,6 @@ const app = express()
 //DB
 dbConnection()
 
-
 // Directorio publico
 app.use(express.static('public'))
 
