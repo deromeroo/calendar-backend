@@ -8,13 +8,12 @@ const app = express()
 // Directorio publico
 app.use(express.static('public'))
 
-// Rutas
-// app.get('/', (req, res) => {
+// Body: reading & parsing
+app.use( express.json() )
 
-//     res.json({
-//         ok: true
-//     })
-// })
+// Rutas
+app.use('/api/auth', require('./routes/auth')) //Authentication
+// TODO: CRUD todos
 
 //*Escuchar peticiones
 app.listen( process.env.PORT, () => {
