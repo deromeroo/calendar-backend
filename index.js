@@ -22,6 +22,10 @@ app.use( express.json() )
 app.use('/api/auth', require('./routes/auth')) //Authentication
 app.use('/api/events', require('./routes/events')) //Events
 
+app.get('*', (req, res) => {
+    res.sendFile(__dirname + '/public/index.html')
+})
+
 //*Escuchar peticiones
 app.listen( process.env.PORT, () => {
     console.log(`Server port: ${process.env.PORT}`)
